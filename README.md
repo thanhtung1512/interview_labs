@@ -4,6 +4,8 @@ In this section, I will design the system using AWS services with 3-tiers as fol
 - Back-end layer: processing business logic
 - Database layer: Storing user data 
 
+![image](https://user-images.githubusercontent.com/28616641/203497996-efb3faa9-6899-47a7-a30b-3af415ee86dd.png)
+
 ## 1.1 Overview infrastructure
 ### 1.1.1 Components
 - For high availability, the system and all its application will sit in 2 AZs and in each AZ will have 1 public, 1 private subnet, 1 bastion host, 1 NAT gateway.
@@ -20,6 +22,7 @@ In this section, I will design the system using AWS services with 3-tiers as fol
 + Cloudtrail: Monitors and records account activity 
 + S3: object file storage and will set with life cycle policy: after 30 days move to S3 Intelligent-Tiering and 90 days move to S3 Glacier 
       And after 180 days will move to S3 Glacier Deep Archive
++ KMS: for envelop encryption S3 object and EKS secret.
 
 ### 1.1.2 Data workflow
 - When user access to domain, Route53 will redirect the traffic to Cloudfront which put the WAF rules.

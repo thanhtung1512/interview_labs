@@ -1,5 +1,5 @@
 # 1. DESIGN
-In this section, I will design the system using AWS services with 3-tiers and 1 caching layer between backend and database for improving performance:
+In this section, I will design the system using AWS services with 3-tiers and a caching layer between backend and database for improving performance:
 - Front-end layer: interactive with user
 - Back-end layer: processing business logic
 - Database layer: Storing user data 
@@ -68,15 +68,20 @@ In the case denying specific IP, we can use NACLS.
 ## 2.1 Credential
 - We need to create a file with name "aws.local "and add credential as below:
 
-`export AWS_ACCESS_KEY=<paste your access key>
-export AWS_SECRET_KEY=<paste your secret key>`
+
+  ```
+  export AWS_ACCESS_KEY=<paste your access key>
+  export AWS_SECRET_KEY=<paste your secret key>
+  ```
 
 - This file will be ignored for security reason and not pushed to Git.
 
 ## 2.2 Run code in local
 - I just run the command:
 
-`make run`       
+  ```
+  make run
+  ```       
 
 ## 2.3 Cloud deployment and CI/CD
 ![image](https://user-images.githubusercontent.com/28616641/204127313-f47ac35d-6906-4a8a-9244-5796e3952b86.png)
